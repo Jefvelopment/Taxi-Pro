@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased text-gray-800 bg-white shadow-md dark:bg-gray-900 dark:text-white">
-        <x-manu />
+        <x-menu />
         <x-sections.hero />
         <x-sections.three-columns />
         <x-sections.footer />
