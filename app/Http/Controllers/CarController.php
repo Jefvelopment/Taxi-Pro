@@ -9,52 +9,59 @@ class CarController extends Controller
 {
     public function index()
     {
-        return view('car.index');
+        $cars = Car::all();
+        return view('cars.index', compact('cars'));
     }
 
     public function create()
     {
-        return view('car.create');
+        return view('cars.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'make' => 'required',
             'model' => 'required',
-            'price' => 'required',
+            'year' => 'required',
+            'license_plate' => 'required',
         ]);
 
         $car = new Car();
-        $car->name = $request->name;
+        $car->make = $request->make;
         $car->model = $request->model;
-        $car->price = $request->price;
+        $car->year = $request->year;
+        $car->license_plate = $request->license_plate;
         $car->save();
 
-        return redirect()->route('car.index');
+        return redirect()->route('cars.index');
     }
 
     public function edit($id)
     {
         $car = Car::find($id);
-        return view('car.edit', compact('car'));
+        return view('cars.edit', compact('car'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
+            'make' => 'required',
             'model' => 'required',
-            'price' => 'required',
+            'year' => 'required',
+            'license_plate' => 'required',
+
         ]);
 
         $car = Car::find($id);
-        $car->name = $request->name;
+        $car->make = $request->make;
         $car->model = $request->model;
-        $car->price = $request->price;
+        $car->year = $request->year;
+        $car->license_plate = $request->license_plate;
+        $car->color = $request->color;
         $car->save();
 
-        return redirect()->route('car.index');
+        return redirect()->route('cars.index');
     }
 
     public function destroy($id)
@@ -62,8 +69,6 @@ class CarController extends Controller
         $car = Car::find($id);
         $car->delete();
 
-        return redirect()->route('car.index');
+        return redirect()->route('cars.index');
     }
-
-    
 }
