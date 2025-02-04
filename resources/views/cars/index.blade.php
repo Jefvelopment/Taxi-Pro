@@ -20,7 +20,8 @@
                 <td>{{ $car->color }}</td>
                 <td>
                     <a href="{{ route('cars.edit', $car->id) }}">Edit</a>
-                    <a href="{{ route('cars.destroy', $car->id) }}" onclick="return confirm('Are you sure you want to delete this car?')">Delete</a>
+                    <a href="{{ route('cars.destroy', $car->id) }}"
+                        onclick="return confirm('Are you sure you want to delete this car?')">Delete</a>
                 </td>
             </tr>
         @endforeach

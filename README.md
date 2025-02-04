@@ -72,5 +72,19 @@ This is a simple taxi booking system.
 
 
 
+## Controller opschonen
+    ## Request Validatie
+    ## Route Model Binding
+    ## private functies
+
+
+    
+# Factories
+
+## Gates
+
+## Policies
+
+
 
 

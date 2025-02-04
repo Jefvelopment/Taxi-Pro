@@ -32,6 +32,7 @@ class CarController extends Controller
         $car->model = $request->model;
         $car->year = $request->year;
         $car->license_plate = $request->license_plate;
+        $car->color = $request->color;
         $car->save();
 
         return redirect()->route('cars.index');
